@@ -1,0 +1,22 @@
+<h1>Liste des étapes</h1>
+<p>
+<%= link_to "créer nouvelle étape", new_article_path %>
+</p>
+<table>
+    <tr>
+        <th>Ingredients</th>
+        <th>Recette</th>
+    </tr>
+    
+    <% @articles.each do |article| %>
+        <tr>
+            <td><%= article.title %></td>
+            <td><%= article.description %></td>
+            <td><%= link_to "Editer", edit_article_path(article) %></td>
+            <td><%= link_to "afficher", article_path(article) %></td>
+        </tr>
+    
+    
+    <% end %>
+    
+</table>
