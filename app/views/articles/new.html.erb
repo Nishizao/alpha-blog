@@ -1,28 +1,3 @@
 <h1>Création d'une nouvelle étape</h1>
 
-<% if @article.errors.any? %>
-<h2>Erreur a cause des erreurs suivantes:</h2>
-    <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-    </ul>
-<% end %>
-<%= form_for @article do |f| %>
-
-<p>
-    <%= f.label :Ingrédient %><br/>
-    <%= f.text_field :title %>
-</p>
-
-<p>
-    <%= f.label :Recette %><br/>
-    <%= f.text_area :description %>
-</p>
-
-<p>
-    <%= f.submit %>
-</p>
-<% end %>
-
-<%= link_to "retour à la liste", articles_path %>
+<%= render 'form' %>

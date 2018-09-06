@@ -2,18 +2,29 @@ class ArticlesController < ApplicationController
     def index
         @articles = Article.all
         
-end
+    end
 
-   def new
+    def new
        @article = Article.new
-   end
+    end
+    
+    def show
+      @article = Article.find(params[:id])
+    end
    
-   def edit
+    def edit
         @article = Article.find(params[:id])
         
-   end
+    end
+    
+    def destroy
+       @article = Article.find(params[:id])
+       @article.destroy
+       flash[:notice] = "Etape supprimée"
+       redirect_to articles_path
+    end
    
-   def create
+    def create
       @article = Article.new(article_params)
        if @article.save
           flash[:notice] = "Etape ajoutée"
@@ -21,14 +32,9 @@ end
           
        else
           render 'new'
-   end
+    end
    
-end
-   def show
-      @article = Article.find(params[:id])
-   end
-   
-   def update
+    def update
         @article = Article.find(params[:id])
         if @article.update(article_params)
             flash[:notice] = "Etape modifiée"
@@ -36,7 +42,10 @@ end
         else
             render 'edit'
         end
-   end
+    end
+   
+   
+end
    
    private
    
