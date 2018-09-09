@@ -1,0 +1,29 @@
+$navbar-default-bg: #009900;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+    float: left;
+    color: white;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    }
+
+.navbar-default .navbar-nav > .dropdown > a:hover,
+.navbar-default .navbar-nav > .dropdown > a:focus,    
+.navbar-default .navbar-nav > .dropdown > a {
+ color: #ffffff;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn {
+    color: white;
+}
+
+.jumbotron {
+    color: white;
+}
