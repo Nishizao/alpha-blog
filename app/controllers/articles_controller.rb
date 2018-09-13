@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
     def update
         @article = Article.find(params[:id])
         if @article.update(article_params)
-            flash[:notice] = "Etape modifiée"
+            flash[:success] = "Recette modifée"
             redirect_to article_path(@article)
         else
             render 'edit'
@@ -28,14 +28,14 @@ class ArticlesController < ApplicationController
     
     def destroy
        @article.destroy
-       flash[:notice] = "Etape supprimée"
+       flash[:danger] = "Recette supprimée"
        redirect_to articles_path
     end
    
     def create
       @article = Article.new(article_params)
        if @article.save
-          flash[:notice] = "Etape ajoutée"
+          flash[:success] = "Recette ajoutée"
           redirect_to article_path(@article)
           
        else

@@ -33,6 +33,18 @@ $navbar-default-bg: #009900;
     
 }
 
+.panel-title h2 {
+    text-align: center;
+}
+
+.article-description {
+    padding: 5px;
+}
+
+.article-actions {
+    float: left;
+}
+
 footer {
     margin-top: 45px ;
     padding-top: 5px;
@@ -51,11 +63,8 @@ footer ul {
     
 }
 
-.article-description {
-    padding: 5px;
+.list-group {
+    list-style: none;
 }
 
-.article-actions {
-    float: left;
-}
 
